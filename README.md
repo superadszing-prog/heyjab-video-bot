@@ -20,6 +20,7 @@ The frontend tries API endpoints in this order and uses the first healthy one:
 3. `window.HEYJAB_CUSTOM_DOMAIN_API_BASE_URL` (optional custom-domain candidate, tried only if higher-priority endpoints fail)
 
 This guarantees a working production path even if custom-domain TLS/DNS is not ready.
+Duplicate values are de-duplicated, so the same URL is not retried multiple times.
 
 Runtime overrides can be injected before loading `app.js`, for example:
 
