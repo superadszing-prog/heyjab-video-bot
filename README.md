@@ -20,6 +20,15 @@ The frontend tries API endpoints in this order and uses the first healthy one:
 
 This guarantees a working production path even if custom-domain TLS/DNS is not ready.
 
+Runtime overrides can be injected before loading `app.js`, for example:
+
+```html
+<script>
+  window.HEYJAB_API_BASE_URL = "https://api.heyjab.com";
+  window.HEYJAB_CUSTOM_DOMAIN_API_BASE_URL = "https://api.heyjab.com";
+</script>
+```
+
 ## Minimal deploy notes
 
 1. Push to `main` (or run workflow manually).
