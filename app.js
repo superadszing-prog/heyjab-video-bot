@@ -1,6 +1,5 @@
 const API_TIMEOUT_MS = 8000;
 const RAILWAY_API_BASE_URL = "https://heyjab-video-bot-api-production.up.railway.app";
-const NETLIFY_API_BASE_URL = "https://video-bot-jab.netlify.app";
 
 function normalizeBaseUrl(url) {
   return typeof url === "string" ? url.trim().replace(/\/+$/, "") : "";
@@ -38,7 +37,6 @@ async function resolveApiBaseUrl() {
   const candidates = unique([
     runtimeOverride,
     RAILWAY_API_BASE_URL,
-    NETLIFY_API_BASE_URL,
     optionalCustomDomainOverride,
   ]);
 
