@@ -56,7 +56,10 @@ async function boot() {
 
   try {
     const apiBaseUrl = await resolveApiBaseUrl();
-    statusElement.innerHTML = `✅ App is reachable. API base URL: <code>${apiBaseUrl}</code>`;
+    statusElement.textContent = "✅ App is reachable. API base URL: ";
+    const codeElement = document.createElement("code");
+    codeElement.textContent = apiBaseUrl;
+    statusElement.appendChild(codeElement);
   } catch (error) {
     statusElement.textContent =
       "❌ Frontend loaded, but no healthy API endpoint is reachable right now.";
