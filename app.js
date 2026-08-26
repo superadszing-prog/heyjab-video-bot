@@ -1,6 +1,5 @@
 const API_TIMEOUT_MS = 8000;
 const RAILWAY_API_BASE_URL = "https://heyjab-video-bot-api-production.up.railway.app";
-const OPTIONAL_CUSTOM_DOMAIN_API_BASE_URL = "https://api.heyjab.com";
 
 function normalizeBaseUrl(url) {
   return typeof url === "string" ? url.trim().replace(/\/+$/, "") : "";
@@ -32,10 +31,13 @@ async function checkHealth(baseUrl) {
 
 async function resolveApiBaseUrl() {
   const runtimeOverride = normalizeBaseUrl(window.HEYJAB_API_BASE_URL);
+  const optionalCustomDomainOverride = normalizeBaseUrl(
+    window.HEYJAB_CUSTOM_DOMAIN_API_BASE_URL
+  );
   const candidates = unique([
     runtimeOverride,
-    OPTIONAL_CUSTOM_DOMAIN_API_BASE_URL,
     RAILWAY_API_BASE_URL,
+    optionalCustomDomainOverride,
   ]);
 
   for (const candidate of candidates) {

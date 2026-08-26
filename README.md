@@ -15,8 +15,8 @@ One-click app URL (platform-generated, no custom DNS/TLS dependency):
 The frontend tries API endpoints in this order and uses the first healthy one:
 
 1. `window.HEYJAB_API_BASE_URL` (optional runtime override)
-2. `https://api.heyjab.com` (optional custom domain)
-3. `https://heyjab-video-bot-api-production.up.railway.app` (reliable fallback)
+2. `https://heyjab-video-bot-api-production.up.railway.app` (reliable default/fallback)
+3. `window.HEYJAB_CUSTOM_DOMAIN_API_BASE_URL` (optional custom-domain candidate)
 
 This guarantees a working production path even if custom-domain TLS/DNS is not ready.
 
