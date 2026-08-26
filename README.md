@@ -16,7 +16,7 @@ The frontend tries API endpoints in this order and uses the first healthy one:
 
 1. `window.HEYJAB_API_BASE_URL` (optional runtime override)
 2. `https://heyjab-video-bot-api-production.up.railway.app` (reliable default/fallback)
-3. `window.HEYJAB_CUSTOM_DOMAIN_API_BASE_URL` (optional custom-domain candidate)
+3. `window.HEYJAB_CUSTOM_DOMAIN_API_BASE_URL` (optional custom-domain candidate, tried only if higher-priority endpoints fail)
 
 This guarantees a working production path even if custom-domain TLS/DNS is not ready.
 
