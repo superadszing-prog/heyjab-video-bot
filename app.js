@@ -31,13 +31,13 @@ async function checkHealth(baseUrl) {
 
 async function resolveApiBaseUrl() {
   const runtimeOverride = normalizeBaseUrl(window.HEYJAB_API_BASE_URL);
-  const optionalCustomDomainOverride = normalizeBaseUrl(
+  const optionalCustomDomainCandidate = normalizeBaseUrl(
     window.HEYJAB_CUSTOM_DOMAIN_API_BASE_URL
   );
   const candidates = unique([
     runtimeOverride,
     RAILWAY_API_BASE_URL,
-    optionalCustomDomainOverride,
+    optionalCustomDomainCandidate,
   ]);
 
   for (const candidate of candidates) {
