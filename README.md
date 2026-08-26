@@ -36,6 +36,7 @@ Runtime overrides can be injected before loading `app.js`, for example:
 1. Push to `main` (or run workflow manually).
 2. Netlify deploy preview/production publish serves the static site from repository root.
 3. Open the URL above.
+4. SPA routing is handled via `_redirects` (`/* /index.html 200`).
 
 ## Optional domain polish (not required for first success path)
 
