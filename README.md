@@ -3,6 +3,7 @@
 One-click app URL (platform-generated, no custom DNS/TLS dependency):
 
 - **https://video-bot-jab.netlify.app**
+- GitHub Pages fallback URL: **https://superadszing-prog.github.io/heyjab-video-bot/**
 
 ## Deployment architecture
 
